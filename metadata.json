@@ -1,0 +1,6 @@
+{
+  "name": "Enterprise Visitor Management System (VMS)",
+  "description": "On-premise enterprise visitor and contractor management system featuring Administrator, Staff, and Security role-based access control, visitor pre-registration, pass assignment, ID verification, blacklist checks, and audit logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

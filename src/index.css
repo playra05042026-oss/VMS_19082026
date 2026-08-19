@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    font-family: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+/* Professional Polish Custom Styles */
+.bg-navy-900 {
+  background-color: #0F172A !important;
+}
+
+.border-navy-700 {
+  border-color: #334155 !important;
+}
+
+.text-navy-300 {
+  color: #94A3B8 !important;
+}
+
+.sidebar-nav-item {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #475569;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0px;
+  border-right: 4px solid transparent;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.sidebar-nav-item:hover:not(.active) {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+.sidebar-nav-item.active {
+  background-color: #EFF6FF;
+  color: #2563EB;
+  border-right-color: #2563EB;
+  font-weight: 600;
+}
+
+/* Stat Cards */
+.stat-card-blue {
+  border-left: 4px solid #3B82F6 !important;
+}
+.stat-card-green {
+  border-left: 4px solid #10B981 !important;
+}
+.stat-card-amber {
+  border-left: 4px solid #F59E0B !important;
+}
+.stat-card-red {
+  border-left: 4px solid #EF4444 !important;
+}
+
+/* Badges */
+.badge-green {
+  background-color: #DCFCE7 !important;
+  color: #166534 !important;
+}
+
+.badge-blue {
+  background-color: #DBEAFE !important;
+  color: #1E40AF !important;
+}
+
+.badge-red {
+  background-color: #FEE2E2 !important;
+  color: #991B1B !important;
+}
+
+.badge-amber {
+  background-color: #FEF3C7 !important;
+  color: #92400E !important;
+}
+
+.badge-slate {
+  background-color: #F1F5F9 !important;
+  color: #475569 !important;
+}
+
+/* Table styling polish */
+.table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+  background-color: #F8FAFC;
+  border-bottom: 2px solid #F1F5F9;
+  padding: 12px 16px;
+}
+
+.table td {
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: #1E293B;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  border-bottom: 1px solid #F1F5F9;
+}
+
+/* Status Bar Footer */
+.status-footer {
+  height: 32px;
+  background-color: #F1F5F9;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 0.725rem;
+  color: #64748B;
+  flex-shrink: 0;
+}
+
+/* Comprehensive Print Media Rules */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12pt !important;
+  }
+
+  #root, .vh-100, .d-flex.flex-grow-1 {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Hide app navigation, sidebar, status footers, buttons, and detailed tables */
+  header.navbar,
+  nav,
+  aside,
+  footer.status-footer,
+  .no-print,
+  .d-print-none,
+  #printableReport,
+  .btn,
+  .btn-group,
+  select,
+  .modal {
+    display: none !important;
+  }
+
+  /* Unconstrain main container */
+  main {
+    overflow: visible !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    background: transparent !important;
+  }
+
+  /* Force exact background colors and SVG borders */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Clean summary cards styling for print */
+  .print-metrics-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    margin-bottom: 18px !important;
+    width: 100% !important;
+  }
+
+  .print-metrics-col {
+    flex: 1 1 25% !important;
+    max-width: 25% !important;
+    display: block !important;
+  }
+
+  .print-metrics-col .card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    padding: 12px !important;
+    background-color: #ffffff !important;
+    border-radius: 6px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-chart-card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+    border-radius: 6px !important;
+    background-color: #ffffff !important;
+  }
+
+  .print-only-header {
+    display: block !important;
+  }
+}
